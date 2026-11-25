@@ -82,21 +82,21 @@ nav.main .btn{min-height:42px;padding:0 18px;font-size:.92rem}
 /* Hero */
 .hero{position:relative;min-height:100svh;color:#fff;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background:var(--deep)}
 .hero-img{position:absolute;inset:0;z-index:-2}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:scale(1.12);animation:settle 2.4s var(--ease) forwards}
-@keyframes settle{to{transform:scale(1)}}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;animation:settle 2.4s var(--ease) both}
+@keyframes settle{from{transform:scale(1.12)}}
 .hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(3,35,42,.55) 0%,rgba(3,35,42,0) 28%,rgba(3,35,42,.15) 50%,rgba(3,35,42,.92) 100%),linear-gradient(90deg,rgba(3,35,42,.55),transparent 60%)}
 .hero .wrap{width:100%;padding-top:130px;padding-bottom:clamp(28px,5vh,56px)}
 .hero h1{font-size:clamp(3.6rem,11vw,9.6rem);font-weight:900;font-style:italic;line-height:.86;letter-spacing:-.035em;max-width:11ch}
 .hero h1 .ln{display:block;overflow:hidden;padding:0 .08em .06em 0;margin-right:-.08em}
-.hero h1 .ln>span{display:block;transform:translateY(105%);animation:rise 1s var(--ease) forwards}
+.hero h1 .ln>span{display:block;animation:rise 1s var(--ease) both}
 .hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
-@keyframes rise{to{transform:none}}
+@keyframes rise{from{transform:translateY(105%)}}
 .hero-sub{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px 40px;margin-top:26px}
-.hero-sub p{max-width:40ch;font-size:clamp(1.05rem,1.5vw,1.25rem);color:#e3eeee;opacity:0;animation:fade .8s .5s forwards}
-@keyframes fade{to{opacity:1}}
+.hero-sub p{max-width:40ch;font-size:clamp(1.05rem,1.5vw,1.25rem);color:#e3eeee;animation:fade .8s .5s both}
+@keyframes fade{from{opacity:0}}
 
 /* Search box (future search engine slot) */
-.finder{margin-top:30px;max-width:820px;opacity:0;animation:fade .8s .7s forwards}
+.finder{margin-top:30px;max-width:820px;animation:fade .8s .7s both}
 .finder-tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 .finder-tabs::-webkit-scrollbar{display:none}
 .finder-tabs button{flex:none;background:rgba(3,35,42,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:0;color:#fff;font-weight:700;font-size:.92rem;padding:11px 18px;border-radius:6px 6px 0 0;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s,color .2s}
@@ -426,7 +426,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-passagens">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Passagens aéreas</div>
-   <div class="xp-media"><img loading="lazy" src="https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Janela de avião com pôr do sol"></div>
+   <div class="xp-media"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1542776488-a3bbacfcdccd?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Janela de avião com pôr do sol"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>Nacional e internacional</span></span><h3>Passagens aéreas</h3></div>
     <div><p>Tarifa paga ou com milhas, voo direto ou a conexão que faz sentido pro seu bolso. A gente compara as companhias e te mostra as opções lado a lado.</p>
@@ -439,7 +439,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-hoteis">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Hotéis e resorts</div>
-   <div class="xp-media"><img loading="lazy" src="https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Hotel com piscina de borda infinita"></div>
+   <div class="xp-media"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1561501900-3701fa6a0864?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Hotel com piscina de borda infinita"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>Do econômico ao resort</span></span><h3>Hotéis e resorts</h3></div>
     <div><p>Hotel bem localizado, pousada charmosa ou resort all inclusive. A gente indica onde ficar de acordo com o roteiro e o orçamento.</p>
@@ -452,7 +452,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-pacotes">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Pacotes</div>
-   <div class="xp-media"><img loading="lazy" src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Praia com palmeiras e guarda-sóis vista de cima"></div>
+   <div class="xp-media"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1558117338-7ef3d637ce2f?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Praia com palmeiras e guarda-sóis vista de cima"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>Voo + hotel + extras</span></span><h3>Pacotes</h3></div>
     <div><p>A viagem inteira montada de uma vez: aéreo, hospedagem, transfer e passeios. Lua de mel, férias em família ou aquela viagem com os amigos.</p>
@@ -465,7 +465,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-cruzeiros">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Cruzeiros</div>
-   <div class="xp-media"><img loading="lazy" src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Navio de cruzeiro em mar azul-turquesa"></div>
+   <div class="xp-media"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Navio de cruzeiro em mar azul-turquesa"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>Brasil, Caribe e Europa</span></span><h3>Cruzeiros</h3></div>
     <div><p>Temporada brasileira, Caribe, Mediterrâneo. A gente ajuda a escolher navio, roteiro e cabine, e ainda encaixa o voo até o porto.</p>
@@ -478,7 +478,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-carro">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Aluguel de carro</div>
-   <div class="xp-media"><img style="object-position:72% 50%" loading="lazy" src="https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Carro em estrada vazia com montanhas ao fundo"></div>
+   <div class="xp-media"><img style="object-position:72% 50%" fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1551952237-954a0e68786c?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Carro em estrada vazia com montanhas ao fundo"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>No Brasil e no exterior</span></span><h3>Aluguel de carro</h3></div>
     <div><p>Retire no aeroporto e siga viagem. A gente compara locadoras, categorias e proteções pra você não pagar a mais no balcão.</p>
@@ -491,7 +491,7 @@ footer small{color:#9ab9ba}
  <article class="xp" id="s-seguro">
   <div class="xp-stick">
    <div class="xp-label" aria-hidden="true">Seguro viagem</div>
-   <div class="xp-media"><img loading="lazy" src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Amigos descansando numa trilha nas montanhas"></div>
+   <div class="xp-media"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1800&q=72" srcset="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=900&q=72 900w, https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1800&q=72 1800w" sizes="100vw" alt="Amigos descansando numa trilha nas montanhas"></div>
    <div class="xp-copy"><div class="wrap">
     <div><span class="tag"><span>Obrigatório em vários países</span></span><h3>Seguro viagem</h3></div>
     <div><p>Cobertura médica, bagagem e cancelamento no tamanho certo pro destino. Pra Europa, o seguro é exigido na entrada, e a gente já resolve isso junto.</p>
@@ -526,14 +526,14 @@ footer small{color:#9ab9ba}
  <div class="hs" id="hs">
   <div class="hs-stick">
    <div class="track" id="track">
-    <button type="button" class="dcard" data-destino="Rio de Janeiro (GIG/SDU)"><img loading="lazy" src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Brasil</span></span><strong>Rio de Janeiro</strong><small>Praia, Pão de Açúcar e samba <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Fernando de Noronha (FEN)"><img loading="lazy" src="https://images.unsplash.com/photo-1614722860207-909e0e8dfd99?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Brasil</span></span><strong>Fernando de Noronha</strong><small>O mar mais bonito do país <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Gramado (RS)"><img loading="lazy" src="https://images.unsplash.com/photo-1690907938160-133874466bb0?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Serra Gaúcha</span></span><strong>Gramado</strong><small>Frio, fondue e Natal Luz <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Buenos Aires (EZE/AEP)"><img loading="lazy" src="https://images.unsplash.com/photo-1725499267114-15531716d101?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Argentina</span></span><strong>Buenos Aires</strong><small>Tango, parrilla e vinho <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Santiago (SCL)"><img loading="lazy" src="https://images.unsplash.com/photo-1598997718764-c5ebf34e7e07?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Chile</span></span><strong>Santiago</strong><small>Neve, Andes e vinícolas <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Cancún (CUN)"><img loading="lazy" src="https://images.unsplash.com/photo-1630252421399-ddde79af47b3?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>México</span></span><strong>Cancún</strong><small>Caribe e all inclusive <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Lisboa (LIS)"><img loading="lazy" src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Portugal</span></span><strong>Lisboa</strong><small>Porta de entrada pra Europa <b>Cotar</b></small></button>
-    <button type="button" class="dcard" data-destino="Paris (CDG)"><img loading="lazy" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>França</span></span><strong>Paris</strong><small>A viagem dos sonhos <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Rio de Janeiro (GIG/SDU)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Brasil</span></span><strong>Rio de Janeiro</strong><small>Praia, Pão de Açúcar e samba <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Fernando de Noronha (FEN)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1614722860207-909e0e8dfd99?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Brasil</span></span><strong>Fernando de Noronha</strong><small>O mar mais bonito do país <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Gramado (RS)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1690907938160-133874466bb0?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Serra Gaúcha</span></span><strong>Gramado</strong><small>Frio, fondue e Natal Luz <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Buenos Aires (EZE/AEP)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1725499267114-15531716d101?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Argentina</span></span><strong>Buenos Aires</strong><small>Tango, parrilla e vinho <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Santiago (SCL)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1598997718764-c5ebf34e7e07?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Chile</span></span><strong>Santiago</strong><small>Neve, Andes e vinícolas <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Cancún (CUN)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1630252421399-ddde79af47b3?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>México</span></span><strong>Cancún</strong><small>Caribe e all inclusive <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Lisboa (LIS)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>Portugal</span></span><strong>Lisboa</strong><small>Porta de entrada pra Europa <b>Cotar</b></small></button>
+    <button type="button" class="dcard" data-destino="Paris (CDG)"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&h=930&q=72" alt=""><span class="tag"><span>França</span></span><strong>Paris</strong><small>A viagem dos sonhos <b>Cotar</b></small></button>
    </div>
    <div class="hs-bar" aria-hidden="true"><i id="hsBar"></i></div>
   </div>
@@ -541,7 +541,7 @@ footer small{color:#9ab9ba}
 </section>
 
 <section class="corp" id="empresas" aria-labelledby="corpTitle">
- <div class="corp-img"><img loading="lazy" src="https://images.unsplash.com/photo-1771970668763-04a319bb5759?auto=format&fit=crop&w=1300&q=72" alt="Homem em sala de embarque olhando pela janela do aeroporto"></div>
+ <div class="corp-img"><img fetchpriority="low" decoding="async" src="https://images.unsplash.com/photo-1771970668763-04a319bb5759?auto=format&fit=crop&w=1300&q=72" alt="Homem em sala de embarque olhando pela janela do aeroporto"></div>
  <div class="corp-copy">
   <span class="tag" style="align-self:flex-start"><span>Raio Corporativo</span></span>
   <h2 id="corpTitle" style="margin-top:18px">Viagem a trabalho sem dor de cabeça</h2>
