@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preload" as="image" href="https://images.unsplash.com/photo-1729350038150-495c628bd695?auto=format&fit=crop&w=1400&q=70" imagesrcset="https://images.unsplash.com/photo-1729350038150-495c628bd695?auto=format&fit=crop&w=900&q=70 900w, https://images.unsplash.com/photo-1729350038150-495c628bd695?auto=format&fit=crop&w=1400&q=70 1400w, https://images.unsplash.com/photo-1729350038150-495c628bd695?auto=format&fit=crop&w=2200&q=70 2200w" imagesizes="100vw">
+<link rel="stylesheet" href="https://static.onertravel.com/widget/search/production/styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Raio Viagens","url":"https://raioviagens.github.io/","telephone":"+55 71 99948-2079","email":"contato@raioviagens.com.br","address":{"@type":"PostalAddress","addressLocality":"Salvador","addressRegion":"BA","addressCountry":"BR"},"sameAs":["https://www.instagram.com/raioviagens/"],"areaServed":"BR"}</script>
 <style>
@@ -112,6 +113,8 @@ nav.main .btn{min-height:42px;padding:0 18px;font-size:.92rem}
 .finder-box input{flex:1;border:0;outline:0;background:transparent;min-height:52px;font-weight:500;font-size:1.02rem}
 .finder-box input::placeholder{color:#6d878b}
 .finder-note{font-size:.88rem;color:#a9c4c6;margin-top:10px}
+.engine{margin-top:30px;max-width:100%;animation:fade .8s .5s both;color:var(--ink)}
+.engine *{min-width:revert}
 
 /* Departure board */
 .board{background:rgba(3,22,27,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 18px 10px;box-shadow:0 30px 70px rgba(0,0,0,.4);animation:fade .8s .6s both}
@@ -465,8 +468,10 @@ footer small{color:#93b2b4}
   <div>
    <h1 id="heroTitle"><span>Para onde</span><span>vamos voar?</span></h1>
    <p class="hero-sub">Passagens, hotéis, pacotes, cruzeiros, carro e seguro. Lazer ou trabalho, tudo resolvido no WhatsApp.</p>
-   <!-- MOTOR DE BUSCA: este bloco é o lugar do futuro motor de busca. Hoje ele leva o cliente para a cotação já preenchida. -->
-   <div class="finder">
+   <!-- MOTOR DE BUSCA (Oner / Befly) -->
+   <div class="engine" id="engine"><div id="wrapper"><befly-widget language="pt-br" new-tab="true"></befly-widget></div></div>
+   <!-- Reserva: aparece só se o motor não carregar -->
+   <div class="finder" id="finderFallback" hidden>
     <div class="finder-tabs" role="tablist" aria-label="O que você quer cotar">
      <button type="button" role="tab" aria-selected="true" data-svc="Passagem aérea" data-ph="Para onde você quer ir?"><svg aria-hidden="true"><use href="#i-plane"/></svg>Passagens</button>
      <button type="button" role="tab" aria-selected="false" data-svc="Hospedagem" data-ph="Em qual cidade vai se hospedar?"><svg aria-hidden="true"><use href="#i-bed"/></svg>Hotéis</button>
@@ -1106,6 +1111,8 @@ function goToForm({dest,svc,only}={}){
  },700);
 }
 
+/* Motor Oner: se não renderizar em 8s, mostra a busca de reserva */
+setTimeout(()=>{const w=document.querySelector('befly-widget');const ok=w&&(w.shadowRoot||w.children.length)&&w.getBoundingClientRect().height>20;if(!ok){$('engine').hidden=true;$('finderFallback').hidden=false}},8000);
 let finderSvc='Passagem aérea';
 const tabs=[...document.querySelectorAll('.finder-tabs button')];
 tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));finderSvc=t.dataset.svc;$('quickDest').placeholder=t.dataset.ph;$('quickDest').focus()}));
@@ -1123,5 +1130,6 @@ form.addEventListener('submit',e=>{
 load();update();goStep(1);
 }
 </script>
+<script type="text/javascript" src="https://static.onertravel.com/widget/search/production/widget-befly.js"></script>
 </body>
 </html>
