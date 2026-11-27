@@ -91,7 +91,7 @@ nav.main .btn{min-height:42px;padding:0 18px;font-size:.92rem}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;animation:settle 2.4s var(--ease) both}
 @keyframes settle{from{transform:scale(1.1)}}
 .hero:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(4,31,37,.94) 0%,rgba(4,31,37,.78) 42%,rgba(4,31,37,.35) 100%),linear-gradient(0deg,rgba(4,31,37,.7),transparent 40%)}
-.hero .wrap{width:100%;padding-top:120px;padding-bottom:60px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(30px,5vw,70px);align-items:center}
+.hero .wrap{width:100%;padding-top:116px;padding-bottom:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);gap:clamp(30px,5vw,70px);align-items:center}
 .hero h1{font-size:clamp(3.2rem,7.4vw,6.4rem);line-height:.92;letter-spacing:-.02em;max-width:11ch}
 .hero h1 span{display:block;animation:rise .9s var(--ease) both}
 .hero h1 span+span{animation-delay:.1s}
@@ -113,7 +113,9 @@ nav.main .btn{min-height:42px;padding:0 18px;font-size:.92rem}
 .finder-box input{flex:1;border:0;outline:0;background:transparent;min-height:52px;font-weight:500;font-size:1.02rem}
 .finder-box input::placeholder{color:#6d878b}
 .finder-note{font-size:.88rem;color:#a9c4c6;margin-top:10px}
-.engine{margin-top:30px;max-width:100%;animation:fade .8s .5s both;color:var(--ink)}
+.engine{grid-column:1/-1;animation:fade .8s .5s both;color:var(--ink)}
+.engine-note{color:#b9d1d3;font-size:.92rem;margin-top:12px}
+.engine-note a{color:var(--sun);font-weight:600}
 .engine *{min-width:revert}
 
 /* Departure board */
@@ -467,9 +469,7 @@ footer small{color:#93b2b4}
  <div class="wrap">
   <div>
    <h1 id="heroTitle"><span>Para onde</span><span>vamos voar?</span></h1>
-   <p class="hero-sub">Passagens, hotéis, pacotes, cruzeiros, carro e seguro. Lazer ou trabalho, tudo resolvido no WhatsApp.</p>
-   <!-- MOTOR DE BUSCA (Oner / Befly) -->
-   <div class="engine" id="engine"><div id="wrapper"><befly-widget language="pt-br" new-tab="true"></befly-widget></div></div>
+   <p class="hero-sub">Pesquise voos, hotéis e pacotes aqui mesmo, ou deixe o Caio montar a viagem inteira pra você no WhatsApp.</p>
    <!-- Reserva: aparece só se o motor não carregar -->
    <div class="finder" id="finderFallback" hidden>
     <div class="finder-tabs" role="tablist" aria-label="O que você quer cotar">
@@ -493,6 +493,9 @@ footer small{color:#93b2b4}
    <div id="boardRows"></div>
    <p class="board-foot">Toque num destino pra começar a cotação.</p>
   </div>
+
+  <!-- MOTOR DE BUSCA (Oner / Befly) -->
+  <div class="engine" id="engine"><div id="wrapper"><befly-widget language="pt-br" new-tab="true"></befly-widget></div><p class="engine-note">Prefere que o Caio pesquise pra você? <a href="#cotacao">Monte sua cotação</a> e receba as opções no WhatsApp.</p></div>
  </div>
 </section>
 
