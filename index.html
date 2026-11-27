@@ -1119,7 +1119,8 @@ function goToForm({dest,svc,only}={}){
 }
 
 /* Motor Oner: se não renderizar em 8s, mostra a busca de reserva */
-setTimeout(()=>{const w=document.querySelector('befly-widget');const ok=w&&(w.shadowRoot||w.children.length)&&w.getBoundingClientRect().height>20;if(!ok){$('engine').hidden=true;$('finderFallback').hidden=false}},8000);
+const engineCheck=()=>{const w=document.querySelector('befly-widget');const ok=w&&w.children.length&&w.getBoundingClientRect().height>120&&!/n[ãa]o autorizado/i.test(w.innerText);$('engine').hidden=!ok;$('finderFallback').hidden=!!ok;return ok};
+setTimeout(engineCheck,3500);setTimeout(engineCheck,9000);
 let finderSvc='Passagem aérea';
 const tabs=[...document.querySelectorAll('.finder-tabs button')];
 tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));finderSvc=t.dataset.svc;$('quickDest').placeholder=t.dataset.ph;$('quickDest').focus()}));
